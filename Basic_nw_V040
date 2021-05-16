@@ -1,0 +1,42 @@
+pragma solidity ^0.4.0;
+//video of various lessons
+
+//Inheritance
+
+contract bank is Regulator{
+    //uint internal myInternalValue;
+    //If i change it to private it won`t be modified outside of bank
+    uint private value;
+    
+    function bank(uint amount) {
+        value = amount;
+    }
+    
+    function deposit(uint amount) {
+        value += amount;
+    }
+    function withdraw(uint amount) {
+        value -= amount;
+    }
+    function balance() returns(uint){
+        return value;
+    }
+    
+    function checkValue(uint amount) returns(bool){
+        return amount >=value;
+    }
+    
+}
+//inherited contract bank with start value amount of 10
+contract contract1 is bank(10) {
+    //Any functionality that exists in bank now exists in contract1
+    // ex. if internal ; myInternalValue = 1
+}
+
+
+//interface
+
+interface Regulator {
+    function checkValue(uint amount) returns(bool);
+    function loan() returns(bool);
+}
