@@ -1,5 +1,9 @@
 pragma solidity 0.5.1;
 
+/* esto
+claro que esto también
+y esto eson comentarios*/
+
 //constant value
 contract mycontract2 {
     string public constant value = "My Value";
